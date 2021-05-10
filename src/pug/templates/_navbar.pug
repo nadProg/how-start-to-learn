@@ -1,10 +1,12 @@
 block props
 
+- let subdomain = '/how-start-to-learn'
+
 .navbar-fixed
   nav.green.lighten-2(style='height: auto')
     .container(style='display: flex; flex-direction: flex-wrap;')
       a(href="#" data-target="mobile-menu" class="sidenav-trigger"): i.material-icons menu
-      a.hide-on-med-and-down.waves-effect(href='/' title='На главную' style='margin-right: 10px; padding: 10px 5px 0'): img(src='/img/logo.svg' width='48' height='48' alt='Логотип')
+      a.hide-on-med-and-down.waves-effect(href=subdomain title='На главную' style='margin-right: 10px; padding: 10px 5px 0'): img(src=`${subdomain}/img/logo.svg` width='48' height='48' alt='Логотип')
       ul.right.hide-on-med-and-down(style='margin-left: auto')
         each link in links
           li: a.waves-effect(href=`${root}#${link.anchor}`)= link.text
@@ -13,4 +15,4 @@ ul#mobile-menu.sidenav.sidenav-close.green.lighten-4
   each link in links
     li: a.grey-blue-text(href=`${root}#${link.anchor}`)= link.text
   li: .divider.green
-  li: a.grey-blue-text(href='/') На главную
+  li: a.grey-blue-text(href=subdomain) На главную
