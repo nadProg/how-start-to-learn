@@ -12,8 +12,6 @@ const server = browserSync.create();
 const srcDir = 'src/';
 const buildDir = 'build/';
 
-const allowEmpty = { allowEmpty: true };
-
 const localPath = {
   src: {
     pug: `${srcDir}pug/`,
@@ -58,11 +56,11 @@ const css = () => src(`${localPath.src.css}**/*.css`)
   .pipe(plumber())
   .pipe(dest(localPath.build.css));
 
-const favicon = () => src(`${localPath.src.favicon}**/*.*`)
+export const favicon = () => src(`${localPath.src.favicon}**/*.*`)
   .pipe(plumber())
   .pipe(dest(localPath.build.root));
 
-const img = () => src(`${localPath.src.img}**/*.*`)
+export const img = () => src(`${localPath.src.img}**/*.*`)
   .pipe(plumber())
   .pipe(dest(localPath.build.img));
 

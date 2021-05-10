@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidenavElems = document.querySelectorAll('.sidenav');
   const scrollspyElems = document.querySelectorAll('.scrollspy');
   const collapsibleElems = document.querySelectorAll('.collapsible');
+  const tooltips = document.querySelectorAll('.material-tooltip');
   const tooltippedElems = document.querySelectorAll('.tooltipped');
 
   /* eslint-disable */
@@ -9,13 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   M.ScrollSpy.init(scrollspyElems);
   M.Collapsible.init(collapsibleElems);
   M.Tooltip.init(tooltippedElems);
-  // M.AutoInit()
   /* eslint-enable */
-  console.log('M INIT!');
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const collapsibleElems = document.querySelectorAll('.collapsible');
 
   collapsibleElems.forEach((elem) => {
     elem.addEventListener('click', (evt) => {
@@ -34,10 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
       icon.classList.toggle('expanded');
     });
   });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const tooltips = document.querySelectorAll('.material-tooltip');
 
   tooltips.forEach((tooltip) => {
     tooltip.classList.add('green');
