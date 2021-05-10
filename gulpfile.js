@@ -62,6 +62,10 @@ const favicon = () => src(`${localPath.src.favicon}**/*.*`)
   .pipe(plumber())
   .pipe(dest(localPath.build.root));
 
+const img = () => src(`${localPath.src.img}**/*.*`)
+  .pipe(plumber())
+  .pipe(dest(localPath.build.img));
+
 const serve = () => {
   server.init({
     server: buildDir,
@@ -85,6 +89,6 @@ const serve = () => {
 };
 
 export { clear };
-export const build = series(clear, parallel(pugToHTML, js, css, favicon));
+export const build = series(clear, parallel(pugToHTML, js, css, favicon, img));
 
 export default series(build, serve);

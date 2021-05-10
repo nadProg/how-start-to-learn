@@ -1,12 +1,12 @@
 block props
 
 section.section.scrollspy(id=id)
-  h2=title
+  h2.flow-text=title
   ul.collapsible
     each card in cards
-      li.teal.lighten-4.z-depth-1
-        h3.collapsible-header.valign-wrapper.teal.lighten-4
-          i.material-icons.expand-icon(style="font-size: 56px; margin-right: .5em") expand_more
+      li.teal.lighten-4.z-depth-1.flow-text
+        h3.collapsible-header.flow-text.valign-wrapper.teal.lighten-4
+          i.material-icons.expand-icon(style="font-size: 1.35em; margin-right: .5em") expand_more
           = card.title
         .collapsible-body.flow-text!= card.text
         .valign-wrapper(style='justify-content: flex-end'): a.tooltipped(
@@ -14,6 +14,6 @@ section.section.scrollspy(id=id)
             target='_blank'
               data-position='left'
                 data-tooltip='Открыть'
-                ): i.material-icons.medium.green-text.text-lighten-2 open_in_new
+                ): i.material-icons.green-text.text-lighten-2(style="font-size: 1.35em;") open_in_new
 
   block additional
