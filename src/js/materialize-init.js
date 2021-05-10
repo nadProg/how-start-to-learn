@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   M.Tooltip.init(tooltippedElems);
   // M.AutoInit()
   /* eslint-enable */
+  console.log('M INIT!');
 });
 
 document.addEventListener('DOMContentLoaded', () => {

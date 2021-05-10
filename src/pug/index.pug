@@ -3,10 +3,7 @@ extends templates/_layout.pug
 block title
   title What to learn
 block navbar
+  - var root = 'list.html'
   include components/_navbar.pug
 block main
-  include components/_books.pug
-  include components/_online-books.pug
-  include components/_interactives.pug
-  include components/_video.pug
-  include components/_other.pug
+  include components/_greeting.pug

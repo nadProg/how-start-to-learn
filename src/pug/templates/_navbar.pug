@@ -1,0 +1,15 @@
+block props
+
+.navbar-fixed
+  nav.green.lighten-2
+    a.waves-effect(href="#" data-target="mobile-menu" class="sidenav-trigger"): i.material-icons menu
+    ul.hide-on-med-and-down(style="display: flex; justify-content: center")
+      each link in links
+        li: a.waves-effect(href=`${root}#${link.anchor}`)= link.text
+      li: a.waves-effect(href='index.html') Обо мне
+
+ul#mobile-menu.sidenav.sidenav-close.green.lighten-4
+  each link in links
+    li: a.grey-blue-text(href=`${root}#${link.anchor}`)= link.text
+  li: .divider.green
+  li: a.grey-blue-text(href='index.html') Обо мне
