@@ -23,10 +23,11 @@ const localPath = {
     css: `${srcDir}css/`,
     fonts: `${srcDir}fonts/`,
     video: `${srcDir}video/`,
+    favicon: `${srcDir}favicon/`,
   },
 
   build: {
-    html: buildDir,
+    root: buildDir,
     js: `${buildDir}js/`,
     img: `${buildDir}img/`,
     css: `${buildDir}css/`,
@@ -46,16 +47,20 @@ const pugToHTML = () => {
   return src(source)
     .pipe(plumber())
     .pipe(pug({}))
-    .pipe(dest(localPath.build.html));
+    .pipe(dest(localPath.build.root));
 };
 
 const js = () => src(`${localPath.src.js}**/*.js`)
-  .pipe(plumber()
-    .pipe(dest(localPath.build.js)));
+  .pipe(plumber())
+  .pipe(dest(localPath.build.js));
 
 const css = () => src(`${localPath.src.css}**/*.css`)
-  .pipe(plumber()
-    .pipe(dest(localPath.build.css)));
+  .pipe(plumber())
+  .pipe(dest(localPath.build.css));
+
+const favicon = () => src(`${localPath.src.favicon}**/*.*`)
+  .pipe(plumber())
+  .pipe(dest(localPath.build.root));
 
 const serve = () => {
   server.init({
@@ -80,6 +85,6 @@ const serve = () => {
 };
 
 export { clear };
-export const build = series(clear, parallel(pugToHTML, js, css));
+export const build = series(clear, parallel(pugToHTML, js, css, favicon));
 
 export default series(build, serve);
