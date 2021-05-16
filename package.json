@@ -1,16 +1,22 @@
 {
   "name": "how-start-to-learn",
   "type": "module",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.2.0",
+  "description": "Resources for beginner front-end self-education",
+  "keywords": [
+    "javascript", "html", "css", "react"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp",
+    "build": "gulp build",
+    "build:deploy": "cross-env NODE_ENV=\"deploy\" gulp build",
+    "deploy": "sh deploy.sh"
   },
-  "author": "",
+  "author": "Eugene Skrobov <skrobov.ev@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.14",
+    "cross-env": "^7.0.3",
     "del": "^6.0.0",
     "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",

@@ -4,6 +4,8 @@ import plumber from 'gulp-plumber';
 import browserSync from 'browser-sync';
 import pug from 'gulp-pug-3';
 
+const NODE_ENV = process.env.NODE_ENV || 'dev';
+
 const {
   src, dest, series, parallel, watch,
 } = gulp;
@@ -44,7 +46,11 @@ const pugToHTML = () => {
 
   return src(source)
     .pipe(plumber())
-    .pipe(pug({}))
+    .pipe(pug({
+      locals: {
+        subdir: NODE_ENV === 'deploy' ? '/how-start-to-learn/' : '/',
+      },
+    }))
     .pipe(dest(localPath.build.root));
 };
 

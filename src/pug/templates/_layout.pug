@@ -1,12 +1,15 @@
 doctype html
 html(lang='ru')
   head 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="description" content="Материалы для самостоятельного обучения начинающим frontend-разработчикам")
+    meta(name="keywords" content="front-end, html, css, javascript, react")
+    meta(name="author" content="Eugene Skrobov")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
     block title
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
     link(href='css/main.css' rel='stylesheet')
     include ../components/_favicon.pug
   body.blue-grey-text.text-darken-2.teal.lighten-5
@@ -14,6 +17,6 @@ html(lang='ru')
 
     main.container
       block main
-    
+
     script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
     script(src="js/materialize-init.js")

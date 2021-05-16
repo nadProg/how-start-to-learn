@@ -4,7 +4,7 @@
 set -e
 
 # build
-gulp build
+npm run build:deploy
 
 # navigate into the build output directory
 cd build
