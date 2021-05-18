@@ -4,10 +4,10 @@ block props
 
 .navbar-fixed
   nav.green.lighten-2(style='height: auto')
-    .container(style='display: flex; flex-direction: flex-wrap;')
+    .container(style='display: flex; justify-content: space-between')
       a(href="#" data-target="mobile-menu" class="sidenav-trigger"): i.material-icons menu
-      a.hide-on-med-and-down.waves-effect(href=subdir title='На главную' style='margin-right: 10px; padding: 10px 5px 0'): img(src=`${subdir}img/logo.svg` width='48' height='48' alt='Логотип')
-      ul.right.hide-on-med-and-down(style='margin-left: auto')
+      a.hide-on-med-and-down.waves-effect(href=subdir title='На главную' style='margin-right: 30px; padding: 10px 5px 0; flex-shrink: 0'): img(src=`${subdir}img/logo.svg` width='48' height='48' alt='Логотип')
+      ul.right.hide-on-med-and-down(style='display: flex; justify-content: flex-end; flex-wrap: wrap')
         each link in links
           li: a.waves-effect(href=`${root}#${link.anchor}`)= link.text
 
